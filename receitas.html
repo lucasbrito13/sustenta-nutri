@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita - Sustenta Nutri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <h1 id="receita-titulo">Carregando...</h1>
+        <button onclick="window.location.href='index.html'" class="btn-voltar">
+            ← Voltar para Home
+        </button>
+    </header>
+
+    <main class="container">
+
+        <img id="receita-imagem" src="" alt="Imagem da receita" class="img-detalhe">
+
+        <section class="card-section">
+            <h2>🛒 Ingredientes</h2>
+            <ul id="receita-ingredientes"></ul>
+        </section>
+
+        <section class="card-section">
+            <h2>🍳 Modo de Preparo</h2>
+            <p id="receita-preparo"></p>
+        </section>
+
+        <section class="card-section">
+            <h2>⚖️ Rendimento</h2>
+            <p id="receita-rendimento"></p>
+        </section>
+
+        <section class="card-section">
+            <h2>📊 Informação Nutricional</h2>
+            <ul id="receita-nutricional"></ul>
+        </section>
+
+    </main>
+
+    <script src="dadosReceitas.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

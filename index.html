@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/nutrição.png">
+    <title>Sustenta Nutri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+
+    <span class="badge">
+        Projeto Educacional • Nutrição e Dietética
+    </span>
+
+    <img src="img/sustenta-nutri-logo.jpeg" alt="Sustenta Nutri">
+
+    <h1>Sustenta Nutri</h1>
+
+    <p>
+        Projeto do Curso Técnico em Nutrição e Dietética
+        (EETEPA - IEEP). Transformando vidas por meio da
+        alimentação consciente e da promoção da saúde regional.
+    </p>
+
+    <div class="hero-mini-info">
+    🌱 Sustentabilidade • 🍎 Saúde • 📚 Educação
+</div>
+
+</header>
+
+    <main class="container">
+
+         <section class="card-section">
+            <h2>🥗 Receitas Saudáveis</h2>
+
+            <div class="cards-grid" id="cardsGrid">
+             <!-- Cards criados pelo JavaScript -->
+            </div>
+        </section>
+
+        <section class="card-section quiz-box">
+            <h2>🧠 Quiz da Nutrição</h2>
+            <small id="quiz-contador"></small>
+            
+            <p id="pergunta">Carregando pergunta...</p>
+            
+            <div id="quiz-botoes-resposta" class="quiz-buttons">
+                <button onclick="responderQuiz(true)">Verdadeiro</button>
+                <button onclick="responderQuiz(false)">Falso</button>
+            </div>
+            
+            <p id="resultado-quiz"></p>
+            
+            <button id="btn-proximo-quiz" onclick="proximaPergunta()" style="display: none;">Próxima Pergunta →</button>
+        </section>
+        
+    </main>
+
+    <footer>
+    <p class="frase">"Pequenas escolhas geram grandes transformações."</p>
+    <hr>
+
+    <p>Curso Técnico em Nutrição e Dietética EETAPA - IEEP<br>Governo do Estado do Pará</p>
+
+    <p style="margin-top: 5px; opacity: 0.7;">
+        Coordenação: Profa. Roberta Campos
+    </p>
+
+    <p style="margin-top: 10px; opacity: 0.8;">
+        <strong>Equipe do Projeto:</strong><br>
+        Nayane • Matheus • Claudia • Eliane • Nayana • Yasmin
+    </p>
+
+    <hr>
+
+    <p>&copy; 2026 Sustenta Nutri. Todos os direitos reservados.</p>
+
+    <p style="margin-top: 10px;">
+        <strong>
+            Desenvolvido por
+            <a target="_blank"
+               href="https://www.instagram.com/l.brito13/">
+                Lucas Brito
+            </a>
+        </strong>
+    </p>
+</footer>
+
+    <script src="dadosReceitas.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

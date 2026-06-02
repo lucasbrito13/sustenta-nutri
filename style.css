@@ -1,0 +1,491 @@
+/* ==========================================
+   IMPORTAÇÃO DE FONTE & ÍCONES
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================
+   VARIÁVEIS MODERNAS (Cores Vibrantes e Contraste)
+========================================== */
+:root {
+    --bg-primary: #F3F8F4;
+    --bg-card: #FFFFFF;
+
+    /* Cores de texto com alto contraste para leitura rápida */
+    --text-main: #1A3020;
+    --text-muted: #526659;
+
+    /* Verdes mais vivos e modernos */
+    --brand-primary: #1E5128;
+    --brand-secondary: #4E9F3D;
+    
+    /* Gradiente premium e profundo para o efeito Glassmorphism */
+    --brand-gradient: linear-gradient(180deg, #113218 0%, #1E5128 100%);
+    
+    --accent-color: #FF7A00; /* Laranja ultra chamativo para botões/destaques */
+    --bg-light-green: #E8F5E9;
+
+    /* Sombras suaves de profundidade (Neumorfismo leve) */
+    --shadow-sm: 0 4px 20px rgba(26, 48, 32, 0.04);
+    --shadow-md: 0 12px 34px rgba(26, 48, 32, 0.08);
+    --shadow-lg: 0 20px 40px rgba(17, 50, 24, 0.15);
+
+    --radius-lg: 32px; /* Bordas mais arredondadas e amigáveis */
+    --radius-md: 20px;
+    --radius-pill: 999px;
+
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================
+   RESET & CONFIGURAÇÃO MOBILE
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Evita bounces estranhos no iOS */
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-size: 16px; /* Tamanho ideal para leitura mobile */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ==========================================
+   EFEITO PARALLAX NATIVO & HERO
+========================================== */
+.hero {
+    background: var(--brand-gradient);
+    color: white;
+    padding: 60px 24px 100px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    
+    /* Ativa o ponto fixo de background criando o efeito Parallax no Scroll */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Círculos de Luz Orgânicos de Fundo (Aura Moderna) */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(78,159,61,0.4) 0%, rgba(0,0,0,0) 70%);
+    top: -100px;
+    right: -100px;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255,122,0,0.2) 0%, rgba(0,0,0,0) 70%);
+    bottom: -50px;
+    left: -80px;
+    z-index: 1;
+}
+
+.hero * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Badge Superior */
+.badge {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 24px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #86EFAC;
+}
+
+/* Logo com micro-animação */
+.hero img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 28px;
+    margin-bottom: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+/* Títulos Impactantes */
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+    background: linear-gradient(to right, #ffffff, #D1FAE5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 440px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 400;
+    padding: 0 8px;
+}
+
+/* Pílula de Informações */
+.hero-mini-info {
+    margin-top: 28px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================
+   CONTAINER & FLUIDEZ DO CONTEÚDO
+========================================== */
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: -45px auto 0 auto; /* Sobe o conteúdo sobre o Hero */
+    padding: 0 18px 40px;
+    position: relative;
+    z-index: 3;
+}
+
+/* Seções estilo "Card Flutuante" (Glassmorphism sutil) */
+.card-section {
+    background: var(--bg-card);
+    padding: 28px 24px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    margin-bottom: 24px;
+    transition: var(--transition);
+}
+
+/* Títulos das Seções com detalhe moderno */
+.card-section h2 {
+    color: var(--brand-primary);
+    margin-bottom: 20px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: -0.5px;
+}
+
+/* Textos informativos focados em legibilidade */
+.card-section p {
+    line-height: 1.8;
+    color: var(--text-main);
+    font-size: 0.98rem;
+}
+
+/* ==========================================
+   CARDS DE RECEITAS (Glow no Toque)
+========================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(30, 81, 40, 0.06);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Estado ativo otimizado para feedback tátil instantâneo no Mobile */
+.card:active {
+    transform: scale(0.97);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-secondary);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-tag {
+    display: inline-block;
+    background: #E8F5E9;
+    color: var(--brand-primary);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   QUIZ INTERATIVO (Gamificado)
+========================================== */
+.quiz-box {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #F1F9F3 100%);
+    border: 2px solid var(--bg-light-green);
+}
+
+#quiz-contador {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brand-secondary);
+    letter-spacing: 1px;
+}
+
+#pergunta {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 16px 0 24px;
+    min-height: 60px;
+    color: var(--text-main);
+}
+
+.quiz-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* Botões gigantes e fáceis de clicar com o dedão */
+button {
+    flex: 1;
+    border: none;
+    padding: 18px;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: white;
+}
+
+button:active {
+    transform: scale(0.92);
+}
+
+/* Cores vibrantes "Acessíveis" para botões de ação */
+.quiz-buttons button:first-child {
+    background: #10B981; /* Verde Sucesso Moderno */
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.quiz-buttons button:last-child {
+    background: #EF4444; /* Vermelho Erro Moderno */
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+#btn-proximo-quiz {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(255, 122, 0, 0.3);
+}
+
+/* ==========================================
+   TELA INTERNA: DETALHES DA RECEITA
+========================================== */
+.img-detalhe {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-top: -65px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 3px solid white;
+}
+
+.btn-voltar {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-pill);
+    padding: 10px 24px;
+    max-width: 100%;
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+
+/* Listas de Ingredientes e Info Nutricional Texturizadas */
+ul {
+    list-style: none;
+}
+
+#receita-ingredientes li,
+#receita-nutricional li {
+    background: #F8FAFC;
+    border-left: 4px solid var(--brand-secondary);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+}
+
+#receita-preparo {
+    line-height: 1.9;
+    font-size: 1rem;
+    color: var(--text-main);
+    background: #FAFDFB;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px dashed rgba(78, 159, 61, 0.2);
+}
+
+#receita-rendimento {
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 1.2rem;
+    background: rgba(255, 122, 0, 0.08);
+    padding: 12px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* ==========================================
+   FOOTER INSTITUCIONAL (Premium)
+========================================== */
+footer {
+    margin-top: auto;
+    background: #0B1A0E; /* Quase preto esverdeado super premium */
+    color: #A3B899;
+    text-align: center;
+    padding: 48px 24px 32px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    font-size: 0.85rem;
+}
+
+footer .frase {
+    color: #4E9F3D;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+footer hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 24px 0;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid var(--brand-secondary);
+    padding-bottom: 2px;
+}
+
+/* ==========================================
+   OTIMIZAÇÃO PARA TABLETS (Telas Maiores)
+========================================== */
+@media (min-width: 600px) {
+    .container {
+        max-width: 720px;
+        padding: 0 24px 50px;
+        margin-top: -60px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .hero {
+        padding: 90px 48px 130px;
+    }
+
+    .hero img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .card img {
+        height: 220px;
+    }
+}
