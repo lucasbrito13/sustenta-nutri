@@ -232,6 +232,65 @@ img {
 }
 
 /* ==========================================
+   LISTAS GERAIS E ORIENTAÇÕES (Home)
+========================================== */
+ul {
+    list-style: none;
+}
+
+.card-section ul {
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+.card-section li {
+    background: #F8FAFC;
+    border-left: 4px solid var(--brand-secondary);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-section li:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   INFO BOX - BENEFÍCIOS (Harmonizado)
+========================================== */
+.info-box {
+    margin-top: 24px;
+    background: linear-gradient(135deg, rgba(78, 159, 61, 0.05) 0%, rgba(30, 81, 40, 0.08) 100%);
+    padding: 22px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(78, 159, 61, 0.15);
+    border-left: 6px solid var(--brand-secondary);
+}
+
+.info-box h3 {
+    color: var(--brand-primary);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.info-box p {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* ==========================================
    CARDS DE RECEITAS (Glow no Toque)
 ========================================== */
 .cards-grid {
@@ -382,23 +441,16 @@ button:active {
     box-shadow: none;
 }
 
-/* Listas de Ingredientes e Info Nutricional Texturizadas */
-ul {
-    list-style: none;
-}
-
+/* Sobrescrita para a tela de receitas não herdar bordas esquadradas chatas */
 #receita-ingredientes li,
 #receita-nutricional li {
-    background: #F8FAFC;
-    border-left: 4px solid var(--brand-secondary);
-    border-radius: 12px;
-    margin-bottom: 10px;
-    padding: 14px 16px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
+    background: #FFFFFF;
+    border-left: none;
+    border-bottom: 1px solid var(--bg-light-green);
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 14px 8px;
+    box-shadow: none;
 }
 
 #receita-preparo {
